@@ -1,0 +1,21 @@
+def ingresar_numero(mensaje):
+    while True:
+        try:
+            numero = int(input(mensaje))
+            return numero
+        except ValueError:
+            print("Por favor, ingrese solo números.")
+
+def seleccionar_articulo(categoria):
+    while True:
+        print("Seleccione un artículo de la categoría", categoria)
+        for clave, valor in categoria.items():
+            print(clave, ":", valor)
+        try:
+            seleccion = int(input("Ingrese el número correspondiente al artículo: "))
+            if seleccion in categoria:
+                return categoria[seleccion]
+            else:
+                print("Selección inválida. Intente de nuevo.")
+        except ValueError:
+            print("Por favor, ingrese solo números.")
