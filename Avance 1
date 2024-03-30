@@ -19,3 +19,22 @@ def seleccionar_articulo(categoria):
                 print("Selección inválida. Intente de nuevo.")
         except ValueError:
             print("Por favor, ingrese solo números.")
+
+def capturar_datos_comprador():
+    print("Ingrese los datos del comprador:")
+    nombre = input("Nombre y apellido: ")
+    identificacion = ingresar_numero("Número de identificación: ")
+    direccion = input("Dirección: ")
+    telefono = ingresar_numero("Teléfono: ")
+    return nombre, identificacion, direccion, telefono
+
+def mostrar_factura(comprador, articulos, total):
+    print("\n--- FACTURA ---")
+    print("Comprador:", comprador[0])
+    print("Identificación:", comprador[1])
+    print("Dirección:", comprador[2])
+    print("Teléfono:", comprador[3])
+    print("\nArtículos comprados:")
+    for articulo in articulos:
+        print(" ".join(articulo[:-1]), "- Precio:", articulo[-1])
+    print("Total a pagar:", total)
